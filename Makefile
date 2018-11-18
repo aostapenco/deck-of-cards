@@ -9,5 +9,9 @@ compile:
 	cd src && \
 		gulp compile
 
+test:
+	cd src && \
+		npm test
+
 
 

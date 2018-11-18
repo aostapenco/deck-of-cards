@@ -11,6 +11,11 @@ To install dependencies and run locally
 make install && make watch
 ```
 
+To run test
+```
+make test
+```
+
 To install dependencies and prepare for deployment
 ```
 make install && make compile

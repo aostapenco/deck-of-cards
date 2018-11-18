@@ -4,7 +4,24 @@
   "description": "deck of cards",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js", "json", "jsx", "node", "es6"
+    ],
+    "testMatch": [
+      "**/spec/**/*.js?(x)",
+      "**/?(*.)(spec|test).js?(x)",
+      "**/spec/**/*.es6",
+      "**/?(*.)(spec|test).es6"
+    ],
+    "verbose": true,
+    "transform": {
+      "^.+\\.jsx$": "babel-jest",
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.es6$": "babel-jest"
+    }
   },
   "author": "Andrei Ostapenco",
   "license": "ISC",
@@ -45,5 +62,8 @@
     "watchify": "^3.11.0",
     "webpack": "^4.25.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "jest-cli": "^23.6.0"
+  }
 }
