@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import Deck from "./deck";
 import Card from "./card";
-import { CSSTransition } from 'react-transition-group';
 
 export default class PlayTable extends Component {
   constructor(props) {
@@ -23,7 +22,7 @@ export default class PlayTable extends Component {
     let deckClass = "deck";
 
     if (isShuffling) {
-      deckClass += " shuffling"
+      deckClass += " shuffling";
     }
 
     return (
@@ -49,12 +48,14 @@ export default class PlayTable extends Component {
         <div className="play-card-wrapper">
           <Card card={card}/>
         </div>
+
+        <div className="screen-overlay">Screen is too small</div>
       </div>
     );
   };
 
   _reset = () => {
-    this.deck.reset();
+    this.deck.build();
     this.setState(this._getInitialState());
   };
 
@@ -62,6 +63,7 @@ export default class PlayTable extends Component {
     this.deck.shuffle();
     this.setState({isShuffling: true});
 
+    // Return state back
     setTimeout(() => {
       this.setState({isShuffling: false});
     }, this.shuffleTimeout);

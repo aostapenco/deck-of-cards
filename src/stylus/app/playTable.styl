@@ -5,6 +5,20 @@ card_height = 7rem
   height 100%
   background-color #45a173
 
+  .screen-overlay
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display none
+    @media(max-height: 468px)
+      display flex
+
   .control-wrapper
     display: flex;
     justify-content: center;

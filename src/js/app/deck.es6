@@ -21,10 +21,6 @@ export default class Deck {
     }
   };
 
-  reset = () => {
-    this.build();
-  };
-
   /**
    * Use Richard Durstenfeld's algorithm to shuffle
    *
