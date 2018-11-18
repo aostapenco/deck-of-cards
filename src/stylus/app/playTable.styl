@@ -4,9 +4,23 @@ card_height = 7rem
 .play-table
   height 100%
   background-color #45a173
-  color #000
 
-  .play-container
+  .control-wrapper
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    button
+      background-color #334d41
+      border-color #15201B
+      &:hover
+        border-color #444D49
+        background-color #5C7167
+        color lightgrey
+      &.shuffle-btn
+        margin-right 15px
+
+  .deck-wrapper
     position absolute
     top 25%
     left 0
@@ -36,15 +50,6 @@ card_height = 7rem
       .counter
         display none
         font-size 3rem
-
-    .reset-btn
-      background-color #334d41
-      border-color #15201B
-      margin-top 37px
-      &:hover
-        border-color #444D49
-        background-color #5C7167
-        color lightgrey
 
   .play-card-wrapper
     position: absolute;

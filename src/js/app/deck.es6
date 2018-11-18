@@ -1,28 +1,28 @@
 export default class Deck {
   constructor() {
     this.cards = [];
-    this.reset();
+    this.build();
   }
 
   build = () => {
     this.cards = [];
 
-    // const suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
-    // const values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
-
-    const suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
-    const values = ['Ace'];
+    const suits = ['hearts', 'spades', 'clubs', 'diamonds'];
+    const values = {1: 'Ace', 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 'Jack', 12: 'Queen', 13: 'King'};
 
     for (let suit in suits) {
       for (let value in values) {
-        this.cards.push(`${values[value]} of ${suits[suit]}`);
+        this.cards.push({
+          name: `${values[value]} of ${suits[suit]}`,
+          suit: suits[suit],
+          rank: value
+        })
       }
     }
   };
 
   reset = () => {
     this.build();
-    this.shuffle();
   };
 
   /**

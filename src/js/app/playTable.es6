@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Deck from "./deck";
+import Card from "./card";
 
 export default class PlayTable extends Component {
   constructor(props) {
@@ -17,27 +18,29 @@ export default class PlayTable extends Component {
   render = () => {
     return (
       <div className="play-table">
-
-        <div className="play-container">
+        <div className="control-wrapper">
           {(this.deck.cards.length)
-            ? <div className="deck" onClick={this._dealOneCard} title="Click to deal a card">
-                <div className="counter">{this.deck.cards.length}</div>
-              </div>
+            ? [
+                <button key="shuffle "className="btn btn-primary shuffle-btn" onClick={this.deck.shuffle}>Shuffle</button>,
+                <button key="deal" className="btn btn-primary deal-btn" onClick={this._dealOneCard}>Deal a card</button>
+              ]
             : <button className="btn btn-primary reset-btn" onClick={this._reset}>Again</button>
           }
         </div>
 
+        <div className="deck-wrapper">
+          {(!this.deck.cards.length) ? null
+            : <div className="deck" onClick={this._dealOneCard} title="Click to deal a card">
+                <div className="counter">{this.deck.cards.length}</div>
+              </div>
+          }
+        </div>
+
         <div className="play-card-wrapper">
-          {this._renderCard()}
+          <Card card={this.state.card}/>
         </div>
       </div>
     );
-  };
-
-  _renderCard = () => {
-    return (
-      <div className="play-card">{this.state.card}</div>
-    )
   };
 
   _reset = () => {
