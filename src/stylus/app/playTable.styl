@@ -46,6 +46,13 @@ card_height = 7rem
       -moz-background-size 100% 100%
       background-size 100% 100%
       background-repeat no-repeat
+      -webkit-transition: -webkit-transform .8s ease-in-out;
+      -ms-transition: -ms-transform .8s ease-in-out;
+      transition: transform .8s ease-in-out
+      &.shuffling
+        transform:rotate(360deg);
+        -ms-transform:rotate(360deg);
+        -webkit-transform:rotate(360deg);
 
       .counter
         display none
