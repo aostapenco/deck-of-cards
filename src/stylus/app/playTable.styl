@@ -1,0 +1,55 @@
+card_width = 5rem
+card_height = 7rem
+
+.play-table
+  height 100%
+  background-color #45a173
+  color #000
+
+  .play-container
+    position absolute
+    top 25%
+    left 0
+    right 0
+    margin auto
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .deck
+      background-color white
+      border-radius 5px
+      display flex
+      justify-content center
+      align-items center
+      cursor pointer
+      margin auto
+      width card_width
+      height card_height
+      background-image url("../img/back.png")
+      background-position 50% 50%
+      -webkit-background-size 100% 100%
+      -moz-background-size 100% 100%
+      background-size 100% 100%
+      background-repeat no-repeat
+
+      .counter
+        display none
+        font-size 3rem
+
+    .reset-btn
+      background-color #334d41
+      border-color #15201B
+      margin-top 37px
+      &:hover
+        border-color #444D49
+        background-color #5C7167
+        color lightgrey
+
+  .play-card-wrapper
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
