@@ -39,9 +39,7 @@ export default class PlayTable extends Component {
 
         <div className="deck-wrapper">
           {(!this.deck.cards.length) ? null
-            : <div className={deckClass} onClick={this._dealOneCard} title="Click to deal a card">
-                <div className="counter">{this.deck.cards.length}</div>
-              </div>
+            : <div className={deckClass} onClick={this._dealOneCard} title="Click to deal a card"></div>
           }
         </div>
 

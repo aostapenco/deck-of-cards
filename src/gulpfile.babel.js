@@ -109,10 +109,9 @@ function executeBundle(bundler, options, startTime) {
     })
     .pipe(source(options.output))
     .pipe(buffer())
-    //Gulp will strip debugging stuffs, uglify the JS, ie minify it, and gzip it when 'compile' is called
+    //Gulp will strip debugging stuffs, uglify the JS, ie minify it when 'compile' is called
     .pipe(gulpif(!global.isWatching, stripDebug()))
     .pipe(gulpif(!global.isWatching, uglify({ mangle: false, compress: false})))
-    .pipe(gulpif(global.cdnCompress, gzip({ append: false })))
     .pipe(gulp.dest(options.destination))
     .pipe(notify(function () {
       return `Build of ${options.output} finished in ${(Date.now() - startTime)}ms`
@@ -151,7 +150,6 @@ function executeStylus(name, src, startTime) {
     .pipe(sourcemaps.write())
     // Gulp will minify CSS using cleanCSS when 'compile' task is called
     .pipe(gulpif(!global.isWatching, cleanCSS()))
-    .pipe(gulpif(global.cdnCompress, gzip({ append: false })))
     .pipe(gulp.dest("../css/"))
     // For some reason in gulp 4.0.0 a file timestamp is not updated and servers doesn't send updated version of the file.
     // We change file timestamp manually with touch() script

@@ -44,9 +44,16 @@ webpack@3.11.0 \
  # // "bootstrap": "^4.1.3",
 #acorn@^6.0.0
 
-run-client:
+install:
+	cd src && npm install
+
+watch:
 	cd src && \
 		gulp watch
+
+compile:
+	cd src && \
+		gulp compile
 
 
 
