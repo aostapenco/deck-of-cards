@@ -1,7 +1,7 @@
 bootstrap:
 	cd src && \
 npm install \
-ansi-colors@^1.1.0 \
+ansi-colors@^3.2.1 \
 babel-core@^6.0.0 \
 babel-loader@^6.0.0 \
 babel-preset-env@^1.6.1 \
@@ -16,7 +16,7 @@ babel-runtime@5.8.20 \
 babelify@6.2.0 \
 browserify@14.3.0 \
 create-react-class@15.5.3 \
-gulp@3.9.1 \
+gulp@^4.0.0 \
 gulp-clean-css@2.0.10 \
 gulp-gzip@1.4.0 \
 gulp-if@2.0.1 \

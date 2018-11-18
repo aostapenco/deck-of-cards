@@ -8,7 +8,6 @@ const stripDebug = require('gulp-strip-debug');
 const log = require('fancy-log');
 const colors = require('ansi-colors');
 const PluginError = require('plugin-error');
-const gzip = require('gulp-gzip');
 const notify = require('gulp-notify');
 const watchify = require('watchify');
 const browserify = require('browserify');
