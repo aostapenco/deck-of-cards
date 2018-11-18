@@ -21,7 +21,7 @@ export default class PlayTable extends Component {
         <div className="control-wrapper">
           {(this.deck.cards.length)
             ? [
-                <button key="shuffle "className="btn btn-primary shuffle-btn" onClick={this.deck.shuffle}>Shuffle</button>,
+                <button key="shuffle" className="btn btn-primary shuffle-btn" onClick={this.deck.shuffle}>Shuffle</button>,
                 <button key="deal" className="btn btn-primary deal-btn" onClick={this._dealOneCard}>Deal a card</button>
               ]
             : <button className="btn btn-primary reset-btn" onClick={this._reset}>Again</button>
